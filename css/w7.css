@@ -1,0 +1,49 @@
+/* ওয়ার্ড-৭ ডেমো: আলাদা ডিজাইন — নেভি + কমলা, উপরে ট্যাব নেভিগেশন, হালকা হিরো */
+:root{--c:#14305a;--c2:#1f4a86;--acc:#f08a24;--bg:#fbf7f0;--ink:#1a2233;--card:#fff;--line:#eadfce;--r:10px;--sh:0 1px 0 rgba(20,48,90,.06);--mut:#5d6679}
+:root[data-theme=light]{--bg:#fbf7f0;--ink:#1a2233;--card:#fff;--line:#eadfce;--mut:#5d6679}
+:root[data-theme=dark]{--bg:#0d1526;--ink:#e9eef8;--card:#15203a;--line:#26345a;--mut:#9aa8c6}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d1526;--ink:#e9eef8;--card:#15203a;--line:#26345a;--mut:#9aa8c6}}
+body{padding-bottom:24px;background:var(--bg)}
+/* হেডার: সাদা, নিচে কমলা রেখা */
+header.bar{background:var(--card)!important;color:var(--ink)!important;border-bottom:3px solid var(--acc);box-shadow:none}
+header.bar p{opacity:1;color:var(--mut)}
+header.bar #tb{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+header.bar .av{border-color:var(--c)}
+/* নেভিগেশন: উপরে, স্ক্রল করা পিল ট্যাব */
+nav{position:sticky!important;top:79px!important;bottom:auto!important;left:auto;right:auto;z-index:24;background:var(--bg)!important;border:0!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important;padding:8px 10px!important;gap:6px!important;overflow-x:auto}
+nav button,nav a{flex:0 0 auto!important;min-width:0!important;flex-direction:row!important;gap:5px!important;padding:7px 13px!important;border:1.5px solid var(--line)!important;border-radius:99px!important;background:var(--card)!important;color:var(--ink)!important;opacity:1!important;font:600 13.5px/1.2 var(--fb)!important;transform:none!important}
+nav button span,nav a span{font-size:15px!important}
+nav button.on{background:var(--c)!important;border-color:var(--c)!important;color:#fff!important}
+nav button.on::before{display:none!important}
+/* হিরো: হালকা কার্ড, বাঁয়ে লেখা, ডানে আর্চ ফ্রেমে ছবি */
+.hero2{height:auto!important;min-height:0;margin:12px 0 0!important;border-radius:22px;background:linear-gradient(180deg,#fff,#fff6e8)!important;color:var(--c)!important;border:1px solid var(--line);display:grid;grid-template-columns:1fr 150px;grid-template-areas:"s i" "n n";gap:4px 10px;padding:20px 16px 16px;overflow:hidden}
+:root[data-theme=dark] .hero2{background:linear-gradient(180deg,#15203a,#1a2a4d)!important;color:#fff!important}
+.hero2::after{display:none!important}
+.hx{grid-area:s;padding:0!important;align-self:center}
+.hsl{font-size:clamp(26px,8vw,40px)!important;text-shadow:none!important;color:var(--c)}
+:root[data-theme=dark] .hsl{color:#fff}
+.hsl span:last-child{color:var(--acc)}
+.him{position:static!important;grid-area:i;width:150px!important;height:190px!important;max-width:none!important;border-radius:75px 75px 14px 14px;object-fit:cover;object-position:50% 20%;background:linear-gradient(#ffd9a8,#f08a24);filter:none!important;animation:none!important;justify-self:end}
+.hnm{position:static!important;grid-area:n;border-top:2px dashed var(--line);margin-top:8px;padding-top:12px;animation:none!important}
+.hnm .rl{display:inline-block;background:var(--acc);color:#fff!important;padding:2px 12px;border-radius:99px;font-size:12.5px}
+.hnm b{font-size:24px;color:var(--c)}:root[data-theme=dark] .hnm b{color:#fff}
+.hnm>span:not(.rl):not(.chip){color:var(--mut)}
+/* কার্ড ও বোতাম */
+.card{border-radius:10px!important;border:1px solid var(--line)!important;border-left:5px solid var(--acc)!important;box-shadow:none!important}
+.card:hover{transform:none!important}
+.btn,button.btn{background:var(--acc)!important;color:#fff!important;border-radius:99px!important;box-shadow:0 3px 0 rgba(0,0,0,.12)}
+section>h2,.card>h2{color:var(--c);border-bottom:2px solid var(--line);padding-bottom:6px}
+:root[data-theme=dark] section>h2,:root[data-theme=dark] .card>h2{color:#fff}
+a{color:var(--c2)}
+@media(min-width:700px){main{max-width:760px}}
+/* --- সরল করা: অপ্রয়োজনীয় অপশন লুকানো --- */
+#bg,#bl,#sq,#rt,#inst,#vid{display:none!important}
+#wg{display:none!important}
+#make .row:has(#rs){display:none}
+/* --- হোমের ৪টি বড় টাইল (ইউনিক) --- */
+.w7t{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.w7t button{border:0;border-radius:18px 18px 18px 4px;padding:16px 14px 14px;text-align:left;color:#fff;font:inherit;display:flex;flex-direction:column;gap:2px;min-height:112px;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 4px 0 rgba(0,0,0,.14)}
+.w7t button::after{content:"";position:absolute;right:-18px;top:-18px;width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.14)}
+.w7t i{font-style:normal;font-size:30px;line-height:1}.w7t b{font:700 17px/1.3 var(--fd);margin-top:auto}.w7t small{opacity:.85;font-size:12.5px;color:#fff}
+.w7t .t1{background:#14305a}.w7t .t2{background:#f08a24}.w7t .t3{background:#1f7a6b}.w7t .t4{background:#b5413a}
+.w7t button:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.14)}
